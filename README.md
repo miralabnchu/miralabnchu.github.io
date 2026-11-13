@@ -110,7 +110,7 @@ python -m http.server 8765
 找到 `id="people"` 的區塊，在對應年級的清單裡加一個 `<li>`：
 
 ```html
-<ul class="names"><li>吳承軒</li><li>新成員姓名</li></ul>
+<ul class="names"><li>現有成員姓名</li><li>新成員姓名</li></ul>
 ```
 
 每年新學期要調整年級：碩一升碩二，畢業的移到「已畢業學生」。
