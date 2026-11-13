@@ -140,4 +140,4 @@ python -m http.server 8765
 
 ## 聯絡
 
-網站內容有誤或需要權限，請聯絡實驗室成員或指導教授李奇恩老師（celee@cs.nchu.edu.tw）。
+網站內容有誤或需要權限，請聯絡網站維護者（71150561112nchu@smail.nchu.edu.tw）。
