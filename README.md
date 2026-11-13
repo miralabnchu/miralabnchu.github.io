@@ -117,11 +117,11 @@ python -m http.server 8765
 
 ### 新增課程
 
-找到 `id="courses"` 的區塊。每個學期是一個 `<div>`，新的學期放最上面，課名連到學校的教學大綱：
+找到 `id="courses"` 的區塊。每個學期是一個 `<div>`，新的學期放最上面：
 
 ```html
 <li>
-  <a href="教學大綱網址" target="_blank" rel="noopener" data-en="English Course Name">課程中文名稱</a>
+  <span data-en="English Course Name">課程中文名稱</span>
   <small data-en="Graduate · Elective · 3 credits">碩士班 · 選修 · 3 學分</small>
 </li>
 ```
