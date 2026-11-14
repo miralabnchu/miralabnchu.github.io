@@ -1,6 +1,6 @@
 # MIRA Lab 網站
 
-國立中興大學資訊工程學系「生醫資訊推理與分析實驗室」（MIRA: Medical Informatics Reasoning and Analysis）的官方網站。
+國立中興大學資訊工程學系「生醫資訊推理與分析實驗室」（MIRA: Medical Information Reasoning and Analysis）的官方網站。
 
 - 線上網址：<https://miralabnchu.github.io/>
 - Repo：<https://github.com/miralabnchu/miralabnchu.github.io>
