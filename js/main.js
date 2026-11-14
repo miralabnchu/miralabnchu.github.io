@@ -42,10 +42,31 @@
 
   if (!("IntersectionObserver" in window)) return;
 
+  // Portrait clips: loop silently while on screen, pause when scrolled away.
+  // With "reduce motion" on they stay still and only play on hover or keyboard focus.
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const clips = [...document.querySelectorAll(".portrait video")];
+  clips.forEach((v) => { v.muted = true; v.loop = true; v.playsInline = true; });
+  const play = (v) => { const p = v.play(); if (p) p.catch(() => {}); };
+  if (still) {
+    clips.forEach((v) => {
+      const tile = v.closest(".person, .pi");
+      tile.tabIndex = 0;
+      ["pointerenter", "focus"].forEach((e) => tile.addEventListener(e, () => play(v)));
+      ["pointerleave", "blur"].forEach((e) => tile.addEventListener(e, () => v.pause()));
+    });
+  } else if (clips.length) {
+    const watch = new IntersectionObserver(
+      (entries) => entries.forEach((en) => (en.isIntersecting ? play(en.target) : en.target.pause())),
+      { threshold: 0.25 }
+    );
+    clips.forEach((v) => watch.observe(v));
+  }
+
   // Content fades up once as it enters the viewport.
   if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   root.classList.add("js");
-  const items = document.querySelectorAll(".area, .flow, .rows > div, .index, .map-cols");
+  const items = document.querySelectorAll(".area, .flow, .rows > div, .index, .map-cols, .pi, .cohort");
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {

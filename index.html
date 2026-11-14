@@ -195,23 +195,88 @@
         <h2 data-en="People">成員</h2>
       </header>
 
-      <!-- TODO: 填入實際成員。每一列：<dt>身分</dt><dd>姓名</dd> -->
-      <dl class="rows">
-        <div>
-          <dt data-en="Principal investigator">指導教授</dt>
-          <dd>
-            <span class="pi-name">李奇恩 Chi-En Lee</span>
-            <small data-en="Assistant Professor">助理教授</small>
-            <small data-en="Ph.D. in Biomedical Engineering, National Taiwan University">國立台灣大學醫學工程博士</small>            <small>Biomedical Image Processing, Multimodal Data Analysis, Brain–Computer Interfaces, Motion Capture</small>
-          </dd>
-        </div>
-        <div><dt data-en="Ph.D. · Class 115">115 級博士</dt><dd><ul class="names"><li>莊家冀</li></ul></dd></div>
-        <div><dt data-en="Master's · Class 114">114 級碩士</dt><dd><ul class="names"><li>李承謙</li></ul></dd></div>
-        <div><dt data-en="Master's · Class 115">115 級碩士</dt><dd><ul class="names"><li>吳承軒</li><li>葉承翰</li><li>周妤</li><li>巫佳祐</li><li>許騰文</li><li>陳槽駿</li><li>陳渝媗</li></ul></dd></div>
-        <!-- 有畢業生時，把下面的 dd 換成 <dd><ul class="names"><li>姓名</li></ul></dd> -->
-        <div><dt data-en="In-service Master's · Class 115">115 級在職專班</dt><dd class="todo" data-en="To be added">待補</dd></div>
-        <div><dt data-en="Alumni">已畢業學生</dt><dd class="todo" data-en="None yet">尚無</dd></div>
-      </dl>
+      <!--
+        頭像：每個人一格 .portrait。還沒有影片時顯示姓氏的佔位字。
+        有影片後，把 <span class="portrait-ph">…</span> 換成：
+          <video src="assets/members/檔名.mp4" poster="assets/members/檔名.jpg" muted loop playsinline preload="metadata"></video>
+        影片規格與做法見 README「成員頭像短影片」。
+      -->
+      <div class="people-wrap">
+        <article class="pi">
+          <div class="portrait"><span class="portrait-ph" aria-hidden="true">李</span></div>
+          <div class="pi-body">
+            <p class="cohort-title" data-en="Principal investigator">指導教授</p>
+            <h3 class="pi-name">李奇恩 Chi-En Lee</h3>
+            <p data-en="Assistant Professor">助理教授</p>
+            <p data-en="Ph.D. in Biomedical Engineering, National Taiwan University">國立台灣大學醫學工程博士</p>
+            <p class="pi-fields">Biomedical Image Processing, Multimodal Data Analysis, Brain–Computer Interfaces, Motion Capture</p>
+          </div>
+        </article>
+
+        <section class="cohort">
+          <h3 class="cohort-title" data-en="Ph.D. · Class 115">115 級博士</h3>
+          <ul class="people">
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">莊</span></div>
+              <p class="person-name">莊家冀</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cohort">
+          <h3 class="cohort-title" data-en="Master's · Class 114">114 級碩士</h3>
+          <ul class="people">
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">李</span></div>
+              <p class="person-name">李承謙</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cohort">
+          <h3 class="cohort-title" data-en="Master's · Class 115">115 級碩士</h3>
+          <ul class="people">
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">吳</span></div>
+              <p class="person-name">吳承軒</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">葉</span></div>
+              <p class="person-name">葉承翰</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">周</span></div>
+              <p class="person-name">周妤</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">巫</span></div>
+              <p class="person-name">巫佳祐</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">許</span></div>
+              <p class="person-name">許騰文</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">陳</span></div>
+              <p class="person-name">陳槽駿</p>
+            </li>
+            <li class="person">
+              <div class="portrait"><span class="portrait-ph" aria-hidden="true">陳</span></div>
+              <p class="person-name">陳渝媗</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cohort">
+          <h3 class="cohort-title" data-en="In-service Master's · Class 115">115 級在職專班</h3>
+          <p class="cohort-empty" data-en="To be added">待補</p>
+        </section>
+
+        <section class="cohort">
+          <h3 class="cohort-title" data-en="Alumni">已畢業學生</h3>
+          <p class="cohort-empty" data-en="None yet">尚無</p>
+        </section>
+      </div>
     </section>
 
     <!-- ============ COURSES ============ -->

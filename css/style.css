@@ -188,9 +188,33 @@ h3 { font: 500 clamp(1.5rem, 2.6vw, 2.25rem)/1.2 var(--serif); }
 .rows dd { font: 400 1.25rem/1.4 var(--serif); }
 .rows dd small { display: block; max-width: 40rem; margin-top: var(--s1); font: 400 .9375rem/1.6 var(--sans); color: var(--ink-2); }
 .rows dd.todo { color: var(--ink-2); font-style: italic; }
-.pi-name { display: block; font-size: 1.75rem; line-height: 1.25; margin-bottom: var(--s2); }
 .courses { display: grid; gap: var(--s4); }
 .names { display: grid; grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr)); gap: var(--s2) var(--s5); }
+
+/* People: portrait tiles that hold a short looping clip ------------- */
+.people-wrap { display: grid; row-gap: var(--s7); min-width: 0; }
+.portrait {
+  position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+  background: var(--surface); border-bottom: 3px solid var(--gold);
+}
+.portrait video, .portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.portrait-ph {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font: 500 clamp(2.5rem, 6vw, 4rem)/1 var(--serif); color: var(--ink); opacity: .22;
+}
+.cohort-title { font: 400 .8125rem/1.4 var(--mono); letter-spacing: .04em; color: var(--ink-2); padding-bottom: var(--s3); margin-bottom: var(--s5); border-bottom: 1px solid var(--rule); }
+.cohort-empty { font: 400 1.25rem/1.4 var(--serif); font-style: italic; color: var(--ink-2); }
+
+.pi { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); column-gap: var(--s6); align-items: end; }
+.pi .cohort-title { border: 0; padding: 0; margin-bottom: var(--s3); }
+.pi-name { font: 500 clamp(1.75rem, 3.2vw, 2.5rem)/1.2 var(--serif); margin-bottom: var(--s4); }
+.pi-body p:not(.cohort-title) { color: var(--ink-2); max-width: 34rem; }
+.pi-fields { margin-top: var(--s3); padding-top: var(--s3); border-top: 1px solid var(--rule); font-size: .9375rem; }
+
+.people { display: grid; grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); gap: var(--s6) var(--s5); }
+.person-name { margin-top: var(--s3); font: 500 1.25rem/1.3 var(--serif); }
+.person .portrait video { transition: transform .5s var(--ease); }
+.person:hover .portrait video { transform: scale(1.03); }
 
 /* Contact + footer: navy band carrying the lab's ornament ----------- */
 .band { margin-top: var(--s8); background: #141a2a url("../assets/pattern.webp") center / cover; }
@@ -230,6 +254,9 @@ h3 { font: 500 clamp(1.5rem, 2.6vw, 2.25rem)/1.2 var(--serif); }
   .area { grid-template-columns: 2.5rem minmax(0, 1fr); row-gap: var(--s3); }
   .area-body { grid-column: 2; }
   .rows > div { grid-template-columns: 1fr; row-gap: var(--s1); }
+  .pi { grid-template-columns: minmax(0, 9rem) minmax(0, 1fr); column-gap: var(--s4); align-items: start; }
+  .people { grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr)); gap: var(--s5) var(--s4); }
+  .person-name { font-size: 1.125rem; }
   .band { margin-top: var(--s7); }
   .band .section { padding-block: var(--s8) var(--s7); }
 

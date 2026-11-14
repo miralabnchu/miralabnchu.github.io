@@ -14,7 +14,8 @@
 | `index.html` | 所有頁面內容：研究領域、合作圖、成員、課程、活動、聯絡 |
 | `css/style.css` | 樣式。顏色、字型、間距都定義在最上方的 `:root` |
 | `js/main.js` | 中英文切換與頁尾年份 |
-| `assets/` | 圖片與 favicon |
+| `assets/` | 標誌、分頁圖示、頁尾花紋 |
+| `assets/members/` | 成員頭像短影片與封面（有影片時才建立） |
 | `.nojekyll` | 讓 GitHub Pages 直接提供檔案，不要刪 |
 
 ## 第一次設定
@@ -107,13 +108,58 @@ python -m http.server 8765
 
 ### 新增成員
 
-找到 `id="people"` 的區塊，在對應年級的清單裡加一個 `<li>`：
+找到 `id="people"` 的區塊。成員依入學級別分組，每一組是一個 `<section class="cohort">`，每個人是一個 `<li class="person">`：
 
 ```html
-<ul class="names"><li>現有成員姓名</li><li>新成員姓名</li></ul>
+<li class="person">
+  <div class="portrait"><span class="portrait-ph" aria-hidden="true">姓</span></div>
+  <p class="person-name">姓名</p>
+</li>
 ```
 
-成員依入學級別分列（例如「115 級碩士」），新的一屆入學時新增一列，畢業的移到「已畢業學生」。
+新的一屆入學時，複製一整個 `<section class="cohort">` 並改標題；畢業的成員移到「已畢業學生」。
+
+### 成員頭像短影片
+
+每個人的頭像是一段 1 到 2 秒、無聲、循環播放的短影片。還沒有影片時，頭像格會顯示姓氏當佔位。
+
+**影片規格**
+
+| 項目 | 規格 |
+|---|---|
+| 長度 | 1 到 2 秒，頭尾動作盡量接得起來，循環時才不會跳 |
+| 比例 | 直式 4:5，建議 480 × 600 像素 |
+| 格式 | MP4（H.264），不要聲音軌 |
+| 大小 | 每支 300 KB 以下 |
+| 封面 | 另存一張同比例的 JPG（影片第一格），100 KB 以下 |
+| 檔名 | 英文小寫與連字號，影片與封面同名，例如 `member-01.mp4`、`member-01.jpg` |
+
+人臉放在畫面中間偏上，背景盡量單純；所有人用同一個背景或同一種色調，整排看起來才整齊。
+
+手機拍的影片通常有幾 MB，要先轉檔。有安裝 ffmpeg 的話，下面的指令會取前 2 秒、裁成 4:5、去掉聲音並壓縮，第二行則是取出封面：
+
+```bash
+ffmpeg -i input.mov -t 2 -an -vf "crop=ih*4/5:ih,scale=480:600" -c:v libx264 -crf 28 -pix_fmt yuv420p -movflags +faststart member-01.mp4
+```
+
+```bash
+ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
+```
+
+**放上網站**
+
+1. 把影片與封面放進 `assets/members/`。
+2. 在 `index.html` 找到那個人，把 `<span class="portrait-ph">…</span>` 整個換成：
+
+   ```html
+   <video src="assets/members/member-01.mp4" poster="assets/members/member-01.jpg" muted loop playsinline preload="metadata"></video>
+   ```
+
+**播放方式**
+
+- 頭像捲進畫面時自動播放，捲出畫面就暫停，不會同時播放全部影片。
+- 訪客的系統若開啟「減少動態效果」，影片不會自動播放，只顯示封面；滑鼠移上去或用鍵盤選到時才播放。
+- 影片一律靜音。有聲音的影片瀏覽器不允許自動播放。
 
 ### 新增課程
 
