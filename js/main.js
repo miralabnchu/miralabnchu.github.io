@@ -62,23 +62,4 @@
     );
     clips.forEach((v) => watch.observe(v));
   }
-
-  // Content fades up once as it enters the viewport.
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-  root.classList.add("js");
-  const items = document.querySelectorAll(".area, .flow, .rows > div, .index, .map-cols, .pi, .cohort");
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => {
-        if (!en.isIntersecting) return;
-        en.target.classList.add("in");
-        io.unobserve(en.target);
-      });
-    },
-    { rootMargin: "0px 0px -8% 0px" }
-  );
-  items.forEach((el) => {
-    el.classList.add("reveal");
-    io.observe(el);
-  });
 })();

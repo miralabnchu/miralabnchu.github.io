@@ -168,7 +168,7 @@ ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
 ```html
 <li>
   <span data-en="English Course Name">課程中文名稱</span>
-  <small data-en="Graduate · Elective · 3 credits">碩士班 · 選修 · 3 學分</small>
+  <small data-en="Graduate, elective, 3 credits">碩士班，選修，3 學分</small>
 </li>
 ```
 
