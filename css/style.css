@@ -77,7 +77,7 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; 
 .hero::after { content: ""; position: absolute; inset: auto 0 0; height: 12px; background: var(--key) repeat-x left bottom; }
 h1 { font-size: clamp(2.25rem, 5.4vw, 4.25rem); line-height: 1.15; letter-spacing: .01em; }
 :lang(zh-Hant) h1 { line-height: 1.3; letter-spacing: .04em; }
-.hero-org { text-wrap: balance; margin-top: var(--s4); font-size: var(--t-md); line-height: 1.5; color: var(--accent); }
+.hero-org { text-wrap: balance; word-break: keep-all; overflow-wrap: anywhere; margin-top: var(--s4); font-size: var(--t-md); line-height: 1.5; color: var(--accent); }
 .hero-lead { margin-top: var(--s6); max-width: 36rem; font-size: 1.0625rem; color: var(--ink-2); }
 .hero-areas { display: flex; flex-wrap: wrap; gap: var(--s3); margin-top: var(--s6); }
 .hero-areas a { display: block; padding: var(--s2) var(--s4); border: 1px solid var(--rule); border-radius: var(--radius); text-decoration: none; transition: border-color .15s, background-color .15s, color .15s; }
@@ -96,9 +96,6 @@ dt, .map-cols, .cohort-title { font-size: var(--t-sm); color: var(--ink-2); }
 .area:last-child { border-bottom: 1px solid var(--rule); }
 .area:target h3 { color: var(--accent); }
 .area-body p { max-width: 36rem; font-size: 1.0625rem; }
-.area dl { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: var(--s2) var(--s4); margin-top: var(--s5); }
-.area dt { padding-top: .1rem; }
-.area dd { font-size: .9375rem; }
 
 /* Collaboration figure ---------------------------------------------- */
 #collab { padding-top: var(--s5); }
@@ -164,7 +161,7 @@ dt, .map-cols, .cohort-title { font-size: var(--t-sm); color: var(--ink-2); }
 .band::before { content: ""; position: absolute; inset: 0 0 auto; height: 12px; background: var(--key) repeat-x; }
 .band .rows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s6) var(--s7); }
 .band .rows > div { padding: 0; border: 0; }
-.band .rows dd { font: 400 clamp(var(--t-md), 2.2vw, var(--t-lg))/1.35 var(--display); }
+.band .rows dd { font: 400 clamp(var(--t-md), 2.2vw, var(--t-lg))/1.35 var(--body); }
 .band a { text-decoration-color: var(--accent); }
 .band .rows a { display: inline-flex; align-items: center; min-height: 2.75rem; }
 .foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s4); padding: var(--s5) var(--inline); border-top: 1px solid var(--rule); font-size: var(--t-sm); color: var(--ink-2); }

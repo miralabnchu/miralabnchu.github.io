@@ -182,7 +182,7 @@ ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
 
 ### 修改合作圖
 
-找到 `id="collab"` 的區塊。每個 `<div class="flow">` 是一個研究領域，裡面的 `branch` 是合作單位，`leaf` 是研究計畫。連線由 CSS 自動畫出，增減節點不需要改樣式。修改後記得同步更新 `id="research"` 區塊裡的合作單位與計畫清單。
+找到 `id="collab"` 的區塊。每個 `<div class="flow">` 是一個研究領域，裡面的 `branch` 是合作單位，`leaf` 是研究計畫。連線由 CSS 自動畫出，增減節點不需要改樣式。合作單位與研究計畫只寫在這張圖裡，`id="research"` 區塊每個領域只放一句說明。
 
 ## 聯絡
 
