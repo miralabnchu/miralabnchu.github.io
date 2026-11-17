@@ -17,7 +17,6 @@
 | `html/people.html` | 成員 |
 | `html/courses.html` | 開授課程 |
 | `html/activities.html` | 實驗室活動 |
-| `html/contact.html` | 聯絡資訊 |
 | `css/style.css` | 所有頁面共用的樣式。顏色、字型、間距都定義在最上方的 `:root` |
 | `js/main.js` | 所有頁面共用：中英文切換、頁尾年份、頭像短影片播放 |
 | `assets/` | 標誌、分頁圖示、頁尾花紋 |
