@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>實驗室活動｜MIRA Lab</title>
+  <meta name="description" content="MIRA Lab 的實驗室活動紀錄。" />
+  <meta property="og:title" content="實驗室活動｜MIRA Lab" />
+  <meta property="og:description" content="MIRA Lab 的實驗室活動紀錄。" />
+  <meta property="og:url" content="https://miralabnchu.github.io/html/activities.html" />
+  <meta property="og:image" content="https://miralabnchu.github.io/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Marcellus&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page" id="top">
+  <a class="skip" href="#main" data-en="Skip to content">跳到主要內容</a>
+
+  <!-- 頁首：每一頁都相同。增減分頁時，index.html 與 html/ 裡每一頁的選單都要一起改。 -->
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="../index.html"><img src="../assets/mira-mark.png" alt="" width="56" height="56" />MIRA Lab</a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="research.html" data-en="Research">研究</a>
+        <a href="collab.html" data-en="Collaboration">合作</a>
+        <a href="people.html" data-en="People">成員</a>
+        <a href="courses.html" data-en="Courses">課程</a>
+        <a href="activities.html" aria-current="page" data-en="Activities">活動</a>
+        <a href="contact.html" data-en="Contact">聯絡</a>
+      </nav>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" id="activities">
+      <header class="section-head">
+        <h1 class="page-title" data-en="Lab activities">實驗室活動</h1>
+      </header>
+
+      <!-- 每一列一則活動：<dt>2026.09</dt><dd>活動名稱<small>一句說明</small></dd>，新的放最上面 -->
+      <dl class="rows">
+        <!--
+          有照片的活動：在活動名稱下面放一個 <div class="slides" data-slides>，照片放在 ../assets/activities/。
+          照片會自動輪播，每 6 秒慢慢淡入換一張（data-interval 是毫秒，可以改）。
+          照片左右兩側的箭頭可以手動換上一張、下一張，兩個 <button> 放在最後一張 <img> 後面。
+          第一張加 class="is-on"，增減照片只要增減 <img>。
+        -->
+        <div>
+          <dt>2026.09.10</dt>
+          <dd>
+            <span data-en="Lab dinner">實驗室聚餐</span>
+            <div class="slides" data-slides data-interval="6000">
+              <div class="slides-frame">
+                <img class="is-on" src="../assets/activities/lab-dinner-2026-09-10-1.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 1 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 1" width="1280" height="960" />
+                <img src="../assets/activities/lab-dinner-2026-09-10-2.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 2 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 2" width="1280" height="960" />
+                <img src="../assets/activities/lab-dinner-2026-09-10-3.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 3 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 3" width="1280" height="960" />
+                <img src="../assets/activities/lab-dinner-2026-09-10-4.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 4 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 4" width="1280" height="960" />
+                <img src="../assets/activities/lab-dinner-2026-09-10-5.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 5 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 5" width="1280" height="960" />
+                <img src="../assets/activities/lab-dinner-2026-09-10-6.jpg" alt="實驗室成員在餐廳長桌旁的聚餐合照，第 6 張" data-en-alt="Lab members at a long restaurant table at the lab dinner, photo 6" width="1280" height="960" />
+                <button class="slides-nav slides-prev" type="button" data-slides-prev aria-label="上一張" data-en-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg></button>
+                <button class="slides-nav slides-next" type="button" data-slides-next aria-label="下一張" data-en-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg></button>
+              </div>
+            </div>
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="band dark">
+    <div class="foot">
+      <span>© <span id="year"></span> MIRA Lab, National Chung Hsing University</span>
+      <a href="#top" data-en="Top">回到頂端</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
