@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>校內外合作｜MIRA Lab</title>
+  <meta name="description" content="MIRA Lab 各研究領域的合作單位與研究計畫。" />
+  <meta property="og:title" content="校內外合作｜MIRA Lab" />
+  <meta property="og:description" content="MIRA Lab 各研究領域的合作單位與研究計畫。" />
+  <meta property="og:url" content="https://miralabnchu.github.io/html/collab.html" />
+  <meta property="og:image" content="https://miralabnchu.github.io/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Marcellus&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page" id="top">
+  <a class="skip" href="#main" data-en="Skip to content">跳到主要內容</a>
+
+  <!-- 頁首：每一頁都相同。增減分頁時，index.html 與 html/ 裡每一頁的選單都要一起改。 -->
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="../index.html"><img src="../assets/mira-mark.png" alt="" width="56" height="56" />MIRA Lab</a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="research.html" data-en="Research">研究</a>
+        <a href="collab.html" aria-current="page" data-en="Collaboration">合作</a>
+        <a href="people.html" data-en="People">成員</a>
+        <a href="courses.html" data-en="Courses">課程</a>
+        <a href="activities.html" data-en="Activities">活動</a>
+        <a href="contact.html" data-en="Contact">聯絡</a>
+      </nav>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" id="collab">
+      <header class="section-head">
+        <h1 class="page-title" data-en="Internal and external collaboration">校內外合作</h1>
+      </header>
+
+      <figure class="map">
+        <div class="map-cols" aria-hidden="true">
+          <span data-en="Area">領域</span>
+          <span data-en="Partner">合作單位</span>
+          <span data-en="Project">研究計畫</span>
+        </div>
+
+        <div class="flow">
+          <div class="node root" data-en="Precision Medicine">精準醫療</div>
+          <div class="branches">
+            <div class="branch">
+              <div class="node partner" data-en="National Taiwan University Hospital">臺大醫院</div>
+              <div class="leaves">
+                <div class="node leaf">Lung CAD</div>
+                <div class="node leaf">Obstructive Sleep Apnea</div>
+              </div>
+            </div>
+            <div class="branch">
+              <div class="node partner" data-en="Taipei Veterans General Hospital">臺北榮民總醫院</div>
+            </div>
+            <div class="branch">
+              <div class="node partner" data-en="Other institutes">其他機構</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div class="node root" data-en="Brain Computer Interface">腦機介面</div>
+          <div class="branches">
+            <div class="branch">
+              <div class="node partner" data-en="National Yang Ming Chiao Tung University">國立陽明交通大學</div>
+              <div class="leaves">
+                <div class="node leaf">Motion Capture for Gait Analysis</div>
+                <div class="node leaf">Exoskeleton Control and Chip</div>
+                <div class="node leaf">Exoskeleton Mechanical Structure</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div class="node root" data-en="Sports Technology">運動科技</div>
+          <div class="branches">
+            <div class="branch">
+              <div class="node partner" data-en="Institute for Information Industry">資訊工業策進會</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flow">
+          <div class="node root" data-en="Quantum Computing">量子運算</div>
+          <div class="branches">
+            <div class="branch">
+              <div class="node partner" data-en="Quantum Center in NTU">臺大量子中心</div>
+              <div class="leaves">
+                <div class="node leaf">Quantum Machine Learning</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="band dark">
+    <div class="foot">
+      <span>© <span id="year"></span> MIRA Lab, National Chung Hsing University</span>
+      <a href="#top" data-en="Top">回到頂端</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

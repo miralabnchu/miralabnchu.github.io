@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>開授課程｜MIRA Lab</title>
+  <meta name="description" content="MIRA Lab 指導教授各學期開授的課程。" />
+  <meta property="og:title" content="開授課程｜MIRA Lab" />
+  <meta property="og:description" content="MIRA Lab 指導教授各學期開授的課程。" />
+  <meta property="og:url" content="https://miralabnchu.github.io/html/courses.html" />
+  <meta property="og:image" content="https://miralabnchu.github.io/assets/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Marcellus&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page" id="top">
+  <a class="skip" href="#main" data-en="Skip to content">跳到主要內容</a>
+
+  <!-- 頁首：每一頁都相同。增減分頁時，index.html 與 html/ 裡每一頁的選單都要一起改。 -->
+  <header class="top">
+    <div class="top-in">
+      <a class="brand" href="../index.html"><img src="../assets/mira-mark.png" alt="" width="56" height="56" />MIRA Lab</a>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="research.html" data-en="Research">研究</a>
+        <a href="collab.html" data-en="Collaboration">合作</a>
+        <a href="people.html" data-en="People">成員</a>
+        <a href="courses.html" aria-current="page" data-en="Courses">課程</a>
+        <a href="activities.html" data-en="Activities">活動</a>
+        <a href="contact.html" data-en="Contact">聯絡</a>
+      </nav>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch to English">EN</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" id="courses">
+      <header class="section-head">
+        <h1 class="page-title" data-en="Courses">開授課程</h1>
+      </header>
+
+      <!-- 每一列一個學期，新的放最上面 -->
+      <dl class="rows">
+        <div>
+          <dt data-en="Fall 2026 (115-1)">115 學年度上學期</dt>
+          <dd>
+            <ul class="courses">
+              <li>
+                <span data-en="Computer Programming">計算機程式設計</span>
+                <small data-en="Undergraduate, required, 3 credits, taught in English">學士班，必修，3 學分，英語授課</small>
+              </li>
+              <li>
+                <span data-en="Biostatistics">生物統計學</span>
+                <small data-en="Undergraduate, elective, 3 credits">學士班，選修，3 學分</small>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt data-en="Spring 2026 (114-2)">114 學年度下學期</dt>
+          <dd>
+            <ul class="courses">
+              <li>
+                <span data-en="Medical Image Processing">醫學影像處理</span>
+                <small data-en="Graduate, elective, 3 credits">碩士班，選修，3 學分</small>
+              </li>
+              <li>
+                <span data-en="Introduction to Bioinformatics">生物資訊導論</span>
+                <small data-en="Undergraduate, elective, 3 credits">學士班，選修，3 學分</small>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="band dark">
+    <div class="foot">
+      <span>© <span id="year"></span> MIRA Lab, National Chung Hsing University</span>
+      <a href="#top" data-en="Top">回到頂端</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

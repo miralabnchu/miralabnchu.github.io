@@ -11,9 +11,15 @@
 
 | 檔案 | 內容 |
 |---|---|
-| `index.html` | 所有頁面內容：研究領域、合作圖、成員、課程、活動、聯絡 |
-| `css/style.css` | 樣式。顏色、字型、間距都定義在最上方的 `:root` |
-| `js/main.js` | 中英文切換與頁尾年份 |
+| `index.html` | 首頁：實驗室名稱與簡介 |
+| `html/research.html` | 研究領域 |
+| `html/collab.html` | 校內外合作圖 |
+| `html/people.html` | 成員 |
+| `html/courses.html` | 開授課程 |
+| `html/activities.html` | 實驗室活動 |
+| `html/contact.html` | 聯絡資訊 |
+| `css/style.css` | 所有頁面共用的樣式。顏色、字型、間距都定義在最上方的 `:root` |
+| `js/main.js` | 所有頁面共用：中英文切換、頁尾年份、頭像短影片播放 |
 | `assets/` | 標誌、分頁圖示、頁尾花紋 |
 | `assets/members/` | 成員頭像短影片與封面（有影片時才建立） |
 | `.nojekyll` | 讓 GitHub Pages 直接提供檔案，不要刪 |
@@ -94,7 +100,11 @@ python -m http.server 8765
 
 ## 常見的內容修改
 
-以下都在 `index.html`，每個區塊上方都有註解標示格式。
+每個分頁各一個檔案，放在 `html/`，區塊上方都有註解標示格式。
+
+每一頁最上方的選單（頁首）是各自寫在檔案裡的。**增減分頁或改選單文字時，`index.html` 與 `html/` 裡的每一頁都要一起改**，並把該頁自己的選單項目加上 `aria-current="page"`。
+
+`html/` 裡的頁面引用圖片、樣式、腳本時路徑要多一層 `../`，例如 `../assets/…`。
 
 ### 中英文
 
@@ -108,7 +118,7 @@ python -m http.server 8765
 
 ### 新增成員
 
-找到 `id="people"` 的區塊。成員依入學級別分組，每一組是一個 `<section class="cohort">`，每個人是一個 `<li class="person">`：
+打開 `html/people.html`，找到 `id="people"` 的區塊。成員依入學級別分組，每一組是一個 `<section class="cohort">`，每個人是一個 `<li class="person">`：
 
 ```html
 <li class="person">
@@ -149,10 +159,10 @@ ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
 **放上網站**
 
 1. 把影片與封面放進 `assets/members/`。
-2. 在 `index.html` 找到那個人，把 `<span class="portrait-ph">…</span>` 整個換成：
+2. 在 `html/people.html` 找到那個人，把 `<span class="portrait-ph">…</span>` 整個換成：
 
    ```html
-   <video src="assets/members/member-01.mp4" poster="assets/members/member-01.jpg" muted loop playsinline preload="metadata"></video>
+   <video src="../assets/members/member-01.mp4" poster="../assets/members/member-01.jpg" muted loop playsinline preload="metadata"></video>
    ```
 
 **播放方式**
@@ -163,7 +173,7 @@ ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
 
 ### 新增課程
 
-找到 `id="courses"` 的區塊。每個學期是一個 `<div>`，新的學期放最上面：
+打開 `html/courses.html`，找到 `id="courses"` 的區塊。每個學期是一個 `<div>`，新的學期放最上面：
 
 ```html
 <li>
@@ -174,15 +184,17 @@ ffmpeg -i member-01.mp4 -frames:v 1 -q:v 4 member-01.jpg
 
 ### 新增活動
 
-找到 `id="activities"` 的區塊，新的活動放最上面：
+打開 `html/activities.html`，找到 `id="activities"` 的區塊，新的活動放最上面：
 
 ```html
 <div><dt>2026.09</dt><dd data-en="Event name">活動名稱</dd></div>
 ```
 
+有照片的活動可以做成自動播放的投影片：照片放在 `assets/activities/`，在活動名稱下面加一個 `<div class="slides" data-slides data-interval="6000">`，裡面每張照片一個 `<img>`，第一張加 `class="is-on"`。`data-interval` 是每張停留的毫秒數。投影片會自動輪播，照片左右兩側有上一張、下一張的箭頭。完整寫法照抄 `html/activities.html` 裡「實驗室聚餐」那一則。照片的英文替代文字寫在 `data-en-alt`。
+
 ### 修改合作圖
 
-找到 `id="collab"` 的區塊。每個 `<div class="flow">` 是一個研究領域，裡面的 `branch` 是合作單位，`leaf` 是研究計畫。連線由 CSS 自動畫出，增減節點不需要改樣式。合作單位與研究計畫只寫在這張圖裡，`id="research"` 區塊每個領域只放一句說明。
+打開 `html/collab.html`，找到 `id="collab"` 的區塊。每個 `<div class="flow">` 是一個研究領域，裡面的 `branch` 是合作單位，`leaf` 是研究計畫。連線由 CSS 自動畫出，增減節點不需要改樣式。合作單位與研究計畫只寫在這張圖裡，`html/research.html` 每個領域只放一句說明。
 
 ## 聯絡
 
